@@ -1,117 +1,128 @@
-# SpendWise Dashboard Shell
+# SpendWise — JavaScript Foundation
 
 ## Project Overview
 
-SpendWise is a modern personal finance dashboard designed to help users visualize their monthly spending and budget categories.
+SpendWise is a personal budgeting dashboard that helps users understand their budget, expenses, and remaining balance.
 
-This Week 4 project focuses on creating the visual dashboard structure using CSS Grid and Flexbox. No JavaScript functionality has been added.
+In this week's project, JavaScript was added to the existing SpendWise dashboard to make the application capable of processing budgeting information.
 
-## Features
+## JavaScript Concepts Implemented
 
-* Responsive dashboard layout
-* Sidebar navigation menu
-* Dashboard header
-* Monthly financial summary
-* Six spending category cards
-* Food category
-* Transport category
-* Rent category
-* Entertainment category
-* Savings category
-* Utilities category
-* CSS Grid for the overall dashboard and category cards
-* Flexbox for navigation, header, summary cards, and dashboard cards
-* CSS custom properties for the application theme
-* Responsive layout for screens below 768px
-* Hover and keyboard focus micro-interactions
-* Dark theme using `prefers-color-scheme`
+The project demonstrates the following JavaScript concepts:
 
-## Files
+* Variables
+* Data types
+* User input
+* Number conversion
+* Arithmetic calculations
+* Functions
+* Conditional statements
+* Console output
 
-### `index.html`
+## Variables
 
-Contains the structure of the SpendWise dashboard, including:
+Variables are used to store important budgeting information.
 
-* Sidebar navigation
-* Header
-* Financial summary
-* Spending category cards
+For example:
 
-### `style.css`
+```javascript
+let monthlyBudget = 80000;
+let totalExpenses = 46500;
+let remainingBalance = monthlyBudget - totalExpenses;
+```
 
-Contains all visual styling for the project, including:
+The variables store the monthly budget, total expenses, and remaining balance.
 
-* CSS Grid
-* Flexbox
-* CSS custom properties
-* Responsive media queries
-* Card animations
-* Dark theme
-* Colors, spacing, typography, borders, and progress bars
+## Collecting User Input
 
-## CSS Grid
+The application uses the JavaScript `prompt()` function to collect budgeting information from the user.
 
-CSS Grid is used for the main dashboard structure:
+```javascript
+let userBudget = prompt("Enter your monthly budget in KSh:");
+let userExpenses = prompt("Enter your total expenses in KSh:");
+```
 
-```css
-.dashboard {
-    display: grid;
-    grid-template-columns: 250px 1fr;
+The values are then converted into numbers using `Number()` so they can be used in calculations.
+
+## Budget Calculations
+
+SpendWise calculates the remaining balance by subtracting expenses from the budget.
+
+```javascript
+let userBalance = calculateBalance(userBudget, userExpenses);
+```
+
+The application also calculates the percentage of the budget that has been spent.
+
+## Functions
+
+Functions are used to organize reusable application logic.
+
+The `calculateBalance()` function calculates the remaining amount:
+
+```javascript
+function calculateBalance(budget, expenses) {
+    return budget - expenses;
 }
 ```
 
-It is also used to arrange the six category cards into three columns on larger screens.
+The `calculateSpendingPercentage()` function calculates the percentage of the budget that has been spent:
 
-## Flexbox
-
-Flexbox is used for:
-
-* Sidebar navigation
-* Header layout
-* User profile
-* Summary cards
-* Category card content
-* Responsive navigation
-
-## Responsive Design
-
-Below 768px, the dashboard changes to a single-column layout. The sidebar and cards adapt to smaller screen sizes.
-
-The responsive layout can be tested using the browser's DevTools Device Toolbar.
-
-## Micro-interactions
-
-Dashboard cards have hover and keyboard focus effects using:
-
-* `transform`
-* `box-shadow`
-* `transition`
-
-The transition lasts 0.2 seconds, which is within the required 250ms limit.
-
-## Dark Theme
-
-The project includes a dark theme using:
-
-```css
-@media (prefers-color-scheme: dark)
+```javascript
+function calculateSpendingPercentage(budget, expenses) {
+    return (expenses / budget) * 100;
+}
 ```
 
-Only the CSS custom properties are overridden to create the dark color scheme.
+Using functions makes the code easier to organize, reuse, and maintain.
+
+## Displaying Results
+
+The calculated results are displayed in the browser's Developer Console using `console.log()`.
+
+The console displays:
+
+* Monthly budget
+* Total expenses
+* Remaining balance
+* Percentage of budget spent
+* Budget status
+
+## How to Test
+
+1. Open `index.html` in a web browser.
+2. JavaScript prompts will ask for the monthly budget and total expenses.
+3. Enter the requested values.
+4. Open Developer Tools using `F12` or right-click and select **Inspect**.
+5. Open the **Console** tab.
+6. Check the SpendWise calculation results.
+
+## Project Files
+
+### `index.html`
+
+Contains the structure of the SpendWise dashboard.
+
+### `style.css`
+
+Contains the styling and responsive layout of the dashboard.
+
+### `script.js`
+
+Contains the JavaScript variables, user input, calculations, functions, and console output.
+
+### `README.md`
+
+Explains the project and the JavaScript concepts implemented.
 
 ## Technologies Used
 
 * HTML5
 * CSS3
+* JavaScript
 * CSS Grid
 * Flexbox
-* CSS Custom Properties
-* Responsive Design
-* Media Queries
 
-## Author
+## Conclusion
 
-SpendWise Dashboard Project
-
-```
-```
+The SpendWise project has been extended from a static dashboard into an application that can collect budgeting information, perform calculations, and display financial results using JavaScript.

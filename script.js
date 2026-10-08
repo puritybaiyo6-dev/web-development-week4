@@ -84,3 +84,120 @@ if (userBalance > 0) {
     console.log("Status: You have exceeded your budget.");
 }
 ```
+// Budget amount
+let budget = 10000;
+
+// Array used to store expense records
+let expenses = [
+    {
+        name: "Lunch",
+        amount: 500
+    },
+    {
+        name: "Transport",
+        amount: 300
+    },
+    {
+        name: "Shopping",
+        amount: 1000
+    }
+];
+
+// Select HTML elements
+const budgetDisplay = document.getElementById("budget");
+const totalSpentDisplay = document.getElementById("totalSpent");
+const remainingDisplay = document.getElementById("remaining");
+const expenseTableBody = document.getElementById("expenseTableBody");
+const expenseForm = document.getElementById("expenseForm");
+const message = document.getElementById("message");
+
+// Function to update the dashboard
+function updateDashboard() {
+
+    let totalSpent = 0;
+
+    // Loop through the expenses array
+    for (let i = 0; i < expenses.length; i++) {
+        totalSpent += expenses[i].amount;
+    }
+
+    let remaining = budget - totalSpent;
+
+    // Update the webpage using the DOM
+    budgetDisplay.textContent = `KSh ${budget.toLocaleString()}`;
+    totalSpentDisplay.textContent = `KSh ${totalSpent.toLocaleString()}`;
+    remainingDisplay.textContent = `KSh ${remaining.toLocaleString()}`;
+
+    // Conditional statements
+    if (remaining < 0) {
+        message.textContent = "⚠️ You have exceeded your budget.";
+    } else if (remaining <= 2000) {
+        message.textContent = "⚠️ Your remaining budget is getting low.";
+    } else {
+        message.textContent = "✅ You are within your budget.";
+    }
+}
+
+// Function to display expenses
+function displayExpenses() {
+
+    // Clear the existing table
+    expenseTableBody.innerHTML = "";
+
+    // Loop through every expense
+    for (let i = 0; i < expenses.length; i++) {
+
+        const row = document.createElement("tr");
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = expenses[i].name;
+
+        const amountCell = document.createElement("td");
+        amountCell.textContent =
+            `KSh ${expenses[i].amount.toLocaleString()}`;
+
+        row.appendChild(nameCell);
+        row.appendChild(amountCell);
+
+        expenseTableBody.appendChild(row);
+    }
+}
+
+// Handle form submission
+expenseForm.addEventListener("submit", function(event) {
+
+    // Prevent page refresh
+    event.preventDefault();
+
+    // Get values entered by the user
+    const expenseName =
+        document.getElementById("expenseName").value.trim();
+
+    const expenseAmount =
+        Number(document.getElementById("expenseAmount").value);
+
+    // Conditional validation
+    if (expenseName === "" || expenseAmount <= 0) {
+        message.textContent = "Please enter a valid expense.";
+        return;
+    }
+
+    // Add new expense to the array
+    expenses.push({
+        name: expenseName,
+        amount: expenseAmount
+    });
+
+    // Update the page
+    displayExpenses();
+    updateDashboard();
+
+    // Clear the form
+    expenseForm.reset();
+
+    message.textContent = "✅ Expense added successfully.";
+});
+
+// Display initial data
+displayExpenses();
+updateDashboard();

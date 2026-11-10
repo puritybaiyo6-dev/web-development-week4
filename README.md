@@ -1,79 +1,106 @@
 # SpendWise – Personal Budget Tracker
 
-## 1. Project Description
+## Project Description
 
-SpendWise is a personal budget tracking web application designed to help users manage their finances. It allows users to record expenses, organize spending into categories, monitor total expenses and calculate their remaining budget.
+SpendWise is a responsive personal budget tracking web application designed to help users manage their expenses and monitor their spending.
 
-The application provides a simple and user-friendly dashboard to encourage better financial management.
+The application allows users to:
+- Add expenses with descriptions, amounts, and categories.
+- View recorded transactions in a table.
+- Delete expenses when necessary.
+- Monitor total expenses and remaining budget.
+- View spending summaries through an interactive dashboard.
 
-## 2. Technologies Used
+The project demonstrates the use of HTML, CSS, and JavaScript to build an interactive and responsive web application.
 
-- HTML5 – Structure of the website.
-- CSS3 – Styling and responsive design.
-- JavaScript – Application functionality and expense calculations.
-- Git – Version control.
-- GitHub – Source code hosting.
-- Netlify – Website hosting and deployment.
+## Technologies Used
 
-## 3. GitHub Repository Information
+- **HTML5:** Provides the structure and content of the application.
+- **CSS3:** Provides styling, layout, and responsive design.
+- **JavaScript:** Handles user interactions, expense calculations, and dashboard updates.
+- **Git:** Tracks changes to the project.
+- **GitHub:** Hosts the project source code.
+- **Netlify:** Hosts the live website and supports automatic deployment.
 
-**Project Name:** SpendWise
+## Project Structure
 
-**Repository:** PASTE YOUR GITHUB REPOSITORY URL HERE
+```text
+SpendWise/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
 
-**Visibility:** Public
+## GitHub Repository
 
-## 4. Live Netlify Website
+**Repository URL:**
 
-**Live Website:** PASTE YOUR NETLIFY WEBSITE URL HERE
+[REPLACE WITH YOUR ACTUAL PUBLIC GITHUB REPOSITORY URL]
 
-The SpendWise application is hosted on Netlify and can be accessed through the live website link above.
+## Live Website
 
-## 5. Deployment Process Summary
+**Netlify Deployment URL:**
 
-The following steps were completed to publish SpendWise:
+[REPLACE WITH YOUR ACTUAL LIVE NETLIFY URL]
 
-1. Reviewed and organized the project files.
-2. Ensured that index.html, style.css and script.js were in the project root directory.
-3. Created a public GitHub repository.
-4. Uploaded the project files to GitHub using Git.
-5. Connected the GitHub repository to Netlify.
-6. Selected the main branch for deployment.
-7. Configured the publish directory for the static website.
-8. Deployed the website using Netlify.
-9. Customized the default Netlify site name to a meaningful SpendWise name.
-10. Tested the live website to confirm that the pages, styles and JavaScript functionality loaded correctly.
-11. Tested continuous deployment by making a visible change, committing it and pushing it to GitHub.
-12. Verified that Netlify automatically detected the GitHub update and published a new deployment.
+## Deployment Process
 
-## 6. Challenges Encountered During Deployment
+The SpendWise application was deployed using GitHub and Netlify.
 
-Some challenges encountered during deployment included:
+### Step 1: Prepare the Project
 
-- Connecting the GitHub repository to Netlify.
-- Configuring the correct deployment settings.
-- Ensuring that all CSS and JavaScript files loaded correctly.
-- Choosing an appropriate custom Netlify site name.
-- Understanding how automatic deployment works when changes are pushed to GitHub.
+The project files were organized in the root directory:
+- index.html
+- style.css
+- script.js
+- README.md
 
-These challenges were addressed by checking the project structure, reviewing deployment settings and testing the live website.
+The HTML file references the CSS and JavaScript files using relative paths.
 
-## 7. Lessons Learned
+### Step 2: Upload the Project to GitHub
 
-Through this deployment assignment, I learned:
+Git was used to track the project files and upload changes to a public GitHub repository.
 
-- How to publish a website using GitHub and Netlify.
-- How to connect a GitHub repository to a hosting platform.
-- How to configure static website deployment.
-- How to customize a Netlify subdomain.
-- How continuous deployment automatically publishes code updates.
-- How to test a live website and troubleshoot deployment problems.
-- The importance of maintaining proper project documentation.
+Commands used:
 
-## 8. Conclusion
+```bash
+git add .
+git commit -m "Prepare SpendWise for deployment"
+git push origin main
+```
 
-SpendWise has been successfully prepared for static web hosting and deployed using GitHub and Netlify.
+### Step 3: Connect GitHub to Netlify
 
-The project demonstrates my understanding of website hosting, version control, continuous deployment and website testing.
+The GitHub repository was connected to Netlify.
 
-**Developed as part of my Web Development training.**
+Netlify was configured to deploy the static website directly from the repository.
+
+### Step 4: Deploy the Website
+
+Netlify published the application and provided a public website URL.
+
+### Step 5: Test the Website
+
+The deployed website was checked to confirm that:
+- The homepage loads successfully.
+- CSS styling displays correctly.
+- JavaScript functionality works.
+- Expenses can be added and deleted.
+- Dashboard calculations update correctly.
+
+### Step 6: Verify Automatic Deployment
+
+A change was pushed to the connected GitHub repository.
+
+Netlify was checked to confirm that the new commit triggered a production deployment.
+
+**Deployment verification status:** [UPDATE AFTER TESTING: Verified / Not yet verified]
+
+## Challenges Encountered
+
+During development and deployment, several challenges were encountered:
+
+1. Git synchronization issues when pushing changes to GitHub.
+2. Updating the README with the
